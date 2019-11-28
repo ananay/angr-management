@@ -55,7 +55,7 @@ jobs:
     #     AM_BUILD_NUMBER: $(Build.BuildId)
     #     GIT_HASH: $(Build.SourceVersion)
     #     GITHUB_AUTH_TOKEN: $(GITHUB_AUTH_TOKEN)
-    - task: GithubRelease@
+    - task: GithubRelease@1
       displayName: 'Create Github Release'
       inputs:
         gitHubConnection: ananay

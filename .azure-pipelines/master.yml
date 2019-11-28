@@ -49,9 +49,20 @@ jobs:
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '3.6'
-    - script: pip install PyGithub
-    - script: python .azure-pipelines/release.py
-      env:
-        AM_BUILD_NUMBER: $(Build.BuildId)
-        GIT_HASH: $(Build.SourceVersion)
-        GITHUB_AUTH_TOKEN: $(GITHUB_AUTH_TOKEN)
+    # - script: pip install PyGithub
+    # - script: python .azure-pipelines/release.py
+    #   env:
+    #     AM_BUILD_NUMBER: $(Build.BuildId)
+    #     GIT_HASH: $(Build.SourceVersion)
+    #     GITHUB_AUTH_TOKEN: $(GITHUB_AUTH_TOKEN)
+    - task: GithubRelease@
+      displayName: 'Create Github Release'
+      inputs:
+        gitHubConnection: ananay
+        repositoryName: ananay/angr-management
+        tagSource: manual
+        tag: $(Build.BuildNumber)
+        releaseTitle: "angr-management test nightly release"
+        releaseNotes: "Release Notes for the release bla bla"
+        isPreRelease: false
+        assetUploadMode: 'replace'

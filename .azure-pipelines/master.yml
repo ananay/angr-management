@@ -23,6 +23,7 @@ jobs:
       inputs:
         versionSpec: '3.6'
     - script: .azure-pipelines/$(SCRIPT)
+    - task: ArchiveFiles@2
     - task: PublishPipelineArtifact@1
       inputs:
         targetPath: dist/

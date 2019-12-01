@@ -25,3 +25,9 @@ pip install -e .
 python bundle.py
 
 # Binary is currently at dist/start
+mkdir artifacts
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    zip artifacts/angr-management-macos.zip -r -v dist/
+else
+    zip artifacts/angr-management-ubuntu.zip -r -v dist/
+fi

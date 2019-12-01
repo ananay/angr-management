@@ -23,15 +23,11 @@ jobs:
       inputs:
         versionSpec: '3.6'
     - script: .azure-pipelines/$(SCRIPT)
-    - task: ArchiveFiles@2
-      inputs:
-        rootFolderOrFiles: dist/
-        archiveFile: dist/angr-management-$(IMAGE_NAME).zip
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: dist/
+        targetPath: artifacts/
         artifactName: angr-management-$(IMAGE_NAME)
-
+        
 - job: Publish
   pool:
     vmImage: ubuntu-18.04

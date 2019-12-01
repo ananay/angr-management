@@ -8,3 +8,6 @@ pip install git+https://github.com/angr/ailment.git#egg=ailment
 pip install git+https://github.com/angr/angr.git#egg=angr
 pip install -e .
 python bundle.py
+mkdir artifacts
+REM Compress-Archive -Path .\dist\ -DestinationPath .\artifacts\angr-management-windows.zip
+xcopy /E dist artifacts

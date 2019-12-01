@@ -55,14 +55,3 @@ jobs:
     #     AM_BUILD_NUMBER: $(Build.BuildId)
     #     GIT_HASH: $(Build.SourceVersion)
     #     GITHUB_AUTH_TOKEN: $(GITHUB_AUTH_TOKEN)
-    - task: GithubRelease@0
-      displayName: 'Create Github Release'
-      inputs:
-        gitHubConnection: github.com_ananay
-        repositoryName: ananay/angr-management
-        tagSource: manual
-        tag: $(Build.BuildNumber)
-        releaseTitle: "angr-management test nightly release"
-        releaseNotes: "Release Notes for the release bla bla"
-        isPreRelease: false
-        assetUploadMode: 'replace'

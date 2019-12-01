@@ -46,12 +46,13 @@ jobs:
       inputs:
         targetPath: $(Build.SourcesDirectory)/dist/
         artifactName: angr-management-windows-2019
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.6'
-    # - script: pip install PyGithub
-    # - script: python .azure-pipelines/release.py
-    #   env:
-    #     AM_BUILD_NUMBER: $(Build.BuildId)
-    #     GIT_HASH: $(Build.SourceVersion)
-    #     GITHUB_AUTH_TOKEN: $(GITHUB_AUTH_TOKEN)
+        
+    # - task: UsePythonVersion@0
+    #   inputs:
+    #     versionSpec: '3.6'
+    # # - script: pip install PyGithub
+    # # - script: python .azure-pipelines/release.py
+    # #   env:
+    # #     AM_BUILD_NUMBER: $(Build.BuildId)
+    # #     GIT_HASH: $(Build.SourceVersion)
+    # #     GITHUB_AUTH_TOKEN: $(GITHUB_AUTH_TOKEN)

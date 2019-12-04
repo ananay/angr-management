@@ -29,5 +29,5 @@ mkdir artifacts
 if [[ "$OSTYPE" == "darwin"* ]]; then
     zip artifacts/angr-management-macos.zip -r -v dist/
 else
-    cp artifacts/angr-management -r -v dist/angr-management
+    cp dist/angr-management artifacts/angr-management
 fi
